@@ -57,15 +57,19 @@ Je nach den Merkmalen der Daten und der Art der auszuführenden Operationen kön
 
 In der Computerprogrammierung ist ein Array eine Struktur zum Speichern und Abrufen von Daten. Man spricht oft über ein Array, als wäre es ein Gitter im Raum, wobei jede Zelle ein Element der Daten speichert. Wäre beispielsweise jedes Datenelement eine Zahl, könnte man sich ein eindimensionales Array wie eine Liste vorstellen:
 
-|1|
-|5|
-|2|
+|   |
+| - |
+| 1 |
+| 5 |
+| 2 |
 
 Ein zweidimensionaler Array ist wie eine Tabelle:
 
-|1|5|2|
-|2|7|0|
-|9|1|1
+|   |   |   |
+| - | - | - |
+| 1 | 5 | 2 |
+| 2 | 7 | 0 |
+| 9 | 1 | 1 |
 
 Ein dreidimensionales Array wäre wie eine Reihe von Tabellen, die vielleicht so gestapelt sind, als ob sie auf einzelnen Seiten gedruckt wären. In NumPy wird diese Idee auf eine beliebige Anzahl von Dimensionen verallgemeinert, und so heißt die grundlegende Array-Klasse `ndarray`: diese repräsentiert ein "N-dimensionales Array".
 
@@ -835,9 +839,11 @@ array([[1, 2],
 
 Dies ergibt eine 2-spaltige Matrix mit drei Zeilen:
 
-|1|2|
-|3|4|
-|5|6|
+|   |   |
+| - | - |
+| 1 | 2 |
+| 3 | 4 |
+| 5 | 6 |
 
 Indizierungs- und Aufteilungsoperationen sind bei der Bearbeitung von Matrizen nützlich. Die funktioniert wie in Python üblich, d.h. wenn man einen Bereich wie `[1:3]` angibt ist der Startwert inklusive, der Endwert exklusive:
 
@@ -889,7 +895,7 @@ array([[2, 3],
 
 Mann diese arithmetischen Operationen auch mit Matrizen unterschiedlicher Größe durchführen, aber nur, wenn eine Matrix nur eine Spalte oder eine Zeile hat. In diesem Fall verwendet NumPy das weiter oben bereits erwähnte Broadcasting für die Operation:
 
-``´pycon
+```pycon
 >>> data = np.array([[1, 2], [3, 4], [5, 6]])
 >>> ones_row = np.array([[1, 1]])
 >>> data + ones_row
@@ -1521,7 +1527,7 @@ Mit Matplotlib hat man Zugang zu einer enormen Anzahl von Visualisierungsoptione
 >>> plt.show()
 ```
 
-![komplexerer Plot](./assets(np_plot_complex.png "komplexerer Plot")
+![komplexerer Plot](./assets/np_plot_complex.png "komplexerer Plot")
 
 
 Mehr Information zu Matplotlib sind in der [Dokumentation](https://matplotlib.org/stable/users/index) zu finden.
@@ -1530,4 +1536,4 @@ Mehr Information zu Matplotlib sind in der [Dokumentation](https://matplotlib.or
 
 Wer nach dieser kompakten Einführung mehr über Numpy erfahren möchte bzw. NumPy weitergehend einsetzen möchte, dem sei die [umfangreiche Dokumentation](https://numpy.org/doc/stable/user/index.html#user) empfohlen. Für gezielte Informationen zu bestimmten Methoden und Funktionen von NumPy ist der [API Referenz](https://numpy.org/doc/stable/reference/index.html) ein guter Einstiegspunkt.
 
-Da NumPy im Python-Umfeld sehr verbreitet ist, findet man zu dem Thema auch sehr viele Webseiten, Blogeinträge, Fragen und Antworten bei StackOverflow usw. Z.B. gibt es auf der Webseite von RealPython eine ganze Reiher [kostenloser Tutorials](https://realpython.com/search?q=numpy) zu diversen Teilbereichen von NumPy.
+Da NumPy im Python-Umfeld sehr verbreitet ist, findet man zu dem Thema auch sehr viele Webseiten, Blogeinträge, Fragen und Antworten bei StackOverflow usw. Z.B. gibt es auf der Webseite von RealPython eine ganze Reihe [kostenloser Tutorials](https://realpython.com/search?q=numpy) zu diversen Teilbereichen von NumPy.
