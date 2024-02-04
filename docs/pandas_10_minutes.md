@@ -1185,6 +1185,12 @@ Das Lesen einer Parquet-Datei erfolgt mit der [read_parquet](https://pandas.pyda
 
 Mehr Informationen zum Lesen und Schreiben von Excel-Dateien findet man in der Dokumentation im Kapitel [Excel Files](https://pandas.pydata.org/docs/user_guide/io.html#io-excel).
 
+Um Excel-Daten zu Lesen und zu Schreiben, wird ein zusätzliches Modul zum Umgang mit Excel-Dateien benötigt. Pandas unterstützt dafür [verschiedene Module](https://pandas.pydata.org/docs/user_guide/io.html#reading-excel-files), hier wird [openpyxl](https://openpyxl.readthedocs.io/en/stable/) verwendet. Dies kann wiefolgt installiert werden:
+
+```shell
+pip3 install openpyxl
+```
+
 Zum Schreiben eines Excel-Datei wird die [to_excel](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_excel.html#pandas.DataFrame.to_excel`) Methode eines `DataFrame` genutzt:
 
 ```pycon
