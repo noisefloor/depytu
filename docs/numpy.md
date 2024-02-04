@@ -2,7 +2,7 @@
 
 # NumPy: Grundlagen für Einsteiger
 
-Willkommen beim deutschsprachigen Tutorial für (Total-) Einsteiger in NumPy!
+Willkommen beim deutschsprachigen Tutorial für (Total-) Einsteiger in NumPy! *Hinweis*: Dieses Tutorial ist stark an das  englischsprachige [Einsteiger-Tutorial](https://github.com/numpy/numpy/blob/main/doc/source/user/absolute_beginners.rst) auf der NumPy Homepage angelehnt.
 
 NumPy (steht für: Numerical Python, auf Deutsch: numerisches Python) ist eine Open-Source-Python-Bibliothek, die in Wissenschaft und Technik Anwendung findet und weit verbreitet ist. Die NumPy-Bibliothek enthält mehrdimensionale Array-Datenstrukturen, wie z. B. das homogene, N-dimensionale `ndarray`, und eine große Bibliothek von Funktionen, die effizient mit diesen Datenstrukturen arbeiten.
 
