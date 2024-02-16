@@ -2,7 +2,7 @@
 
 # Pandas in 10 Minuten
 
-Dieses Tutorial ist eine kurze Einführung in [Pandas](https://pandas.pydata.org), welches hauptsächlich für neue Nutzer gedacht ist, die Pandas noch nicht genutzt haben.
+Dieses Tutorial ist eine kurze Einführung in [Pandas](https://pandas.pydata.org), welches hauptsächlich für neue Nutzer gedacht ist, die einen Überblick über die Möglichkeiten von Pandas bekommen möchten.
 
 Zum Verständnis sollte man Grundkenntnisse im Umgang mit Python haben. Des Weiteren hilft es, wenn man die Grundlagen von NumPy kennt, besonders was ein NumPy Array ist, da dies hier im Tutorial an einigen Stellen aufgegriffen wird.
 
@@ -22,7 +22,7 @@ Wer die Python-Distribution [Anaconda](https://docs.conda.io/en/latest/) nutzt h
 conda install pandas
 ```
 
-Da Pandas im Hintergrund unter anderem auf [NumPy](https://numpy.org) setzt, wird dieses Python-Modul direkt als Abhängigkeit mitinstalliert. NumPy wird im Rahmen dieses Tutorials hier auch eingesetzt.
+Da Pandas im Hintergrund unter anderem auf [NumPy](https://numpy.org) setzt, wird dieses Python-Modul direkt als Abhängigkeit mitinstalliert. NumPy wird im Rahmen dieses Tutorials auch eingesetzt.
 
 ## Pandas importieren
 
@@ -32,9 +32,9 @@ Nach erfolgreicher Installation lässt sich Pandas wie folgt installieren:
 import pandas as pd
 ```
 
-Die weit verbreitete Konvention, das `pandas` Modul auf `pd` beim Import umzubenennen, ermöglicht den Zugriff auf Pandas-Funktionen mit einem kurzen, wiedererkennbaren Präfix (`pd.`) und unterscheidet gleichzeitig Pandas-Funktionen von anderen, die den gleichen Namen tragen.
+Die weit verbreitete Konvention ist, dass `pandas` Modul auf `pd` beim Import umzubenennen. Dies ermöglicht den Zugriff auf Pandas-Funktionen mit einem kurzen, wiedererkennbaren Präfix (`pd.`) und unterscheidet gleichzeitig Pandas-Funktionen von anderen, die eventuell den gleichen Namen tragen.
 
-Da, wie oben bereits erwähnt, im folgenden auch NumPy genutzt wird, sollte man zum Nachvollziehen der folgenden Beispiele dieses Modul auch installieren:
+Das weiter oben bereits erwähnt NumPy wird wie folgt importiert:
 
 ```python
 import numpy as np
@@ -59,7 +59,7 @@ In diesem Tutorial und der NumPy Dokumentation findet man immer wieder Codeblöc
 3  1.0 2013-01-02  1.0
 ```
 
-Text mit vorangestelltem `>>>` oder `...` ist **Eingabe**, der Code, den man in ein Skript oder an einer Python-Eingabeaufforderung eingeben würden. Alles andere ist **Ausgabe**, die Ergebnisse der Ausführung des Codes. Zu beachten ist, dass `>>>` und `...` nicht Teil des Codes sind und einen Fehler verursachen können, wenn sie an einem Python-Prompt eingegeben werden.
+Text mit vorangestelltem `>>>` oder `...` ist **Eingabe** im interaktiven Python-Interpreter, also der Code, den man in ein Skript oder an einer Python-Eingabeaufforderung eingeben würden. Alles andere ist **Ausgabe**, die Ergebnisse der Ausführung des Codes. Zu beachten ist, dass `>>>` und `...` nicht Teil des Codes sind und einen Fehler verursachen können, wenn sie an einem Python-Prompt eingegeben werden.
 
 ## Grundlegenden Datenstrukturen in Pandas
 
@@ -136,6 +136,8 @@ E         category
 F           object
 dtype: object
 ```
+
+`dtype` ist die Kurzform für "data type", auf Deutsch: Datentyp.
 
 ## Daten anzeigen
 
@@ -291,8 +293,6 @@ Bei einem DataFrame werden durch die Übergabe eines Slice `:` die passenden Zei
 
 Weiterführende Informationen zu `DataFrame.loc` und `DataFrame.at` sind in der Doku unter [Selection by Label](https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-label)
 
-See more in :ref:`Selection by Label <indexing.label>` using :meth:`DataFrame.loc` or :meth:`DataFrame.at`.
-
 Auswahl einer Zeile basierend auf ihrer Bezeichnung / ihres Indexes:
 
 ```pycon
@@ -307,7 +307,7 @@ Name: 2013-01-01 00:00:00, dtype: float64
 Alle Zeilen für bestimmte Spalten auswählen:
 
 ```pycon
->>> df.loc[:, ["A", "B"]]#
+>>> df.loc[:, ["A", "B"]]
                    A         B
 2013-01-01  0.469112 -0.282863
 2013-01-02  1.212112 -0.173215
@@ -334,7 +334,7 @@ Wenn man eine Zeile und eine Spalte auswählt erhält man einen einzelnen Wert (
 0.4691122999071863
 ```
 
-Für den schnellen Zugriff gibt es die folgende, zum vorherigen Beispiel äquivalente Methode:
+Für den schnellen Zugriff gibt es die folgende, zum vorherigen Beispiel äquivalente, Methode:
 
 ```pycon
 >>> df.at[dates[0], "A"]
@@ -345,7 +345,7 @@ Für den schnellen Zugriff gibt es die folgende, zum vorherigen Beispiel äquiva
 
 Weiterführende Information zu `DataFrame.iloc` und `DataFrame.iat` sind in der Dokumentation unter [Selection by Position](https://pandas.pydata.org/docs/user_guide/indexing.html#indexing-integer) zu finden.
 
-Auswahl eine Zeile über deren Index:
+Auswahl einer Zeile über deren Index:
 
 ```pycon
 >>> df.iloc[3]
@@ -411,7 +411,7 @@ Gezielt einen Wert abfragen:
 -0.17321464905330858
 ```
 
-### Auswahl über (Bool'sche) Vergleiche
+### Auswahl über (Boolsche) Vergleiche
 
 Alle Zeilen auswählen, in den `df.A` größer als 0 ist:
 
@@ -491,7 +491,7 @@ Werte setzen, indem man einen NumPy Array zuweist:
 >>> df.loc[:, "D"] = np.array([5] * len(df))
 ```
 
-Das Ergebnis der vorangegangen Operationen ist wie folgt:
+Das Ergebnis der vorangegangenen Operationen ist wie folgt:
 
 ```pycon
 >>> df
@@ -717,7 +717,7 @@ Pandas bietet verschiedene Möglichkeiten zur einfachen Verkettung von `Series` 
 7 -0.932132  1.956030  0.017587 -0.016692
 8 -0.575247  0.254161 -1.143704  0.215897
 9  1.193555 -0.077118 -0.408530 -0.862495
->>> # in drei Teile aufteile
+>>> # in drei Teile aufteilen
 >>> pieces = [df[:3], df[3:7], df[7:]]
 >>> pd.concat(pieces)
           0         1         2         3
@@ -1108,7 +1108,7 @@ Die `plt.close` Methode wird zum [Schließen](https://matplotlib.org/stable/api/
 
 ![Liniediagramm](./assets/pd_line_graph.png "Liniendiagramm")
 
-Die [plot](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html#pandas.DataFrame.plot) Methode eines `DataFrame`plotter alle Spalten:
+Die [plot](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html#pandas.DataFrame.plot) Methode eines `DataFrame` plottet alle Spalten:
 
 ```pycon
 >>> df = pd.DataFrame(
@@ -1185,7 +1185,7 @@ Das Lesen einer Parquet-Datei erfolgt mit der [read_parquet](https://pandas.pyda
 
 Mehr Informationen zum Lesen und Schreiben von Excel-Dateien findet man in der Dokumentation im Kapitel [Excel Files](https://pandas.pydata.org/docs/user_guide/io.html#io-excel).
 
-Um Excel-Daten zu Lesen und zu Schreiben, wird ein zusätzliches Modul zum Umgang mit Excel-Dateien benötigt. Pandas unterstützt dafür [verschiedene Module](https://pandas.pydata.org/docs/user_guide/io.html#reading-excel-files), hier wird [openpyxl](https://openpyxl.readthedocs.io/en/stable/) verwendet. Dies kann wiefolgt installiert werden:
+Um Excel-Daten zu Lesen und zu schreiben, wird ein zusätzliches Modul zum Umgang mit Excel-Dateien benötigt. Pandas unterstützt dafür [verschiedene Module](https://pandas.pydata.org/docs/user_guide/io.html#reading-excel-files), hier wird [openpyxl](https://openpyxl.readthedocs.io/en/stable/) verwendet. Dies kann wiefolgt installiert werden:
 
 ```shell
 pip3 install openpyxl
@@ -1251,6 +1251,6 @@ Dieses Tutorial ist, wie anfangs bereits gesagt, ein sehr kurzer Überblick übe
 
 ## Über dieses Tutorial
 
- * Autor: noisefloor (<nsfl.bnt (at) gmail.com>)
+ * Autor: noisefloor (<nsflr.bnt (at) gmail.com>)
  * Lizenz: [CC0 Universell](https://creativecommons.org/publicdomain/zero/1.0/deed.de)
  * Github Seite: [github.com/noisefloor/depytu](https://github.com/noisefloor/depytu)
